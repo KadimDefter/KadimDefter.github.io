@@ -1,0 +1,70 @@
+backend:
+  name: github
+  repo: KULLANICI_ADINIZ/DEPO_ADINIZ   # <-- kendi GitHub depo adresinizle değiştirin
+  branch: main
+locale: tr
+media_folder: static/img
+public_folder: /img
+publish_mode: simple
+slug:
+  encoding: ascii
+  clean_accents: true
+collections:
+  - name: posts
+    label: Yazılar
+    label_singular: Yazı
+    folder: content/posts
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: [date, title]
+    fields:
+      - {label: Başlık, name: title, widget: string}
+      - {label: Kategori, name: category, widget: relation, collection: categories, search_fields: [title], value_field: "{{slug}}", display_fields: [title]}
+      - {label: Tarih, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
+      - {label: Yazar, name: author, widget: string, required: false}
+      - {label: Özet, name: excerpt, widget: text}
+      - {label: Kapak görseli, name: image, widget: image, required: false}
+      - {label: Manşette göster, name: featured, widget: boolean, default: false, required: false}
+      - {label: Taslak (sitede gösterme), name: draft, widget: boolean, default: false, required: false}
+      - {label: Metin, name: body, widget: markdown}
+  - name: categories
+    label: Kategoriler
+    label_singular: Kategori
+    folder: content/categories
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    fields:
+      - {label: Ad, name: title, widget: string}
+      - {label: Açıklama, name: description, widget: string, required: false}
+      - {label: "Renk tonu (0-360)", name: hue, widget: number, value_type: int, min: 0, max: 360, default: 30}
+      - {label: Sıra, name: order, widget: number, value_type: int, default: 10}
+  - name: settings
+    label: Ayarlar ve Sayfalar
+    files:
+      - label: Site ayarları
+        name: site
+        file: content/settings.json
+        format: json
+        fields:
+          - {label: Site adı, name: title, widget: string}
+          - {label: Site açıklaması, name: description, widget: text}
+          - {label: "Site adresi (https://...)", name: siteUrl, widget: string}
+          - {label: İletişim e-postası, name: email, widget: string}
+          - {label: Varsayılan yazar, name: author, widget: string}
+      - label: Hakkında sayfası
+        name: about
+        file: content/pages/hakkinda.md
+        fields:
+          - {label: Başlık, name: title, widget: string}
+          - {label: Metin, name: body, widget: markdown}
+      - label: Gizlilik sayfası
+        name: privacy
+        file: content/pages/gizlilik.md
+        fields:
+          - {label: Başlık, name: title, widget: string}
+          - {label: Metin, name: body, widget: markdown}
