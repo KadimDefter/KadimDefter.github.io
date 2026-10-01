@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: KULLANICI_ADINIZ/DEPO_ADINIZ   # <-- kendi GitHub depo adresinizle değiştirin
+  repo: repo: KadimDefter/kadim-defter
   branch: main
 locale: tr
 media_folder: static/img
