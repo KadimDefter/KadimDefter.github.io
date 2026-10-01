@@ -3,12 +3,7 @@ title: 'Etiyopya Dağlarından Fincana: Kahvenin Kadim Yolculuğu'
 category: gunluk
 date: 2026-10-02
 author: Yusuf Yol
-excerpt: |-
-  Günümüzde sabahlarımızın vazgeçilmezi, sohbetlerimizin en koyu bahanesi ve zihnimizi tazeleyen sihirli bir içecek olan kahve; yalnızca bir lezzet değil, yüzyıllara yayılan devasa bir kültür mirasıdır.
-
-  Bugün bir fincandan yükselen o büyülü koku, geçmişte saray elçilerinin diplomatik görüşmelerine, Viyana kapılarındaki tarihi kırılma noktalarına ve keçi çobanlarının gizemli keşiflerine tanıklık etti. Bir dönem tabiplerce ilaç niyetine reçete edilen, bir dönem ise sosyal düzeni sarstığı gerekçesiyle yasaklanan bu siyah çekirdek, insanlık tarihini şekillendiren en güçlü simgelerden biri haline geldi.
-
-  Peki, Kaffa dağlarındaki mütevazı bir çalıdan başlayıp dünya kültürünü değiştiren bu serüven nasıl başladı? Geleneği, diplomasiyi ve sosyalleşmeyi baştan tanımlayan kahvenin kadim yolculuğuna birlikte göz atalım.
+excerpt: Etiyopya dağlarında başlayan küçük bir keşif, sarayları, fikir kulüplerini ve dünya tarihini nasıl değiştirdi? Kahvenin keçi çobanlarından günümüz fincanlarına uzanan kadim serüvenine göz atın.
 image: /img/dang-cong-JqF4IS65xEg-unsplash.jpg
 featured: true
 draft: false
