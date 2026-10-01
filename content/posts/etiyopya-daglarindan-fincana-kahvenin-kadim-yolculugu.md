@@ -4,7 +4,7 @@ category: gunluk
 date: 2026-10-02
 author: Yusuf Yol
 excerpt: Etiyopya dağlarında başlayan küçük bir keşif, sarayları, fikir kulüplerini ve dünya tarihini nasıl değiştirdi? Kahvenin keçi çobanlarından günümüz fincanlarına uzanan kadim serüvenine göz atın.
-image: /img/dang-cong-JqF4IS65xEg-unsplash.jpg
+image: /img/mike-kenneally-TD4DBagg2wE-unsplash.jpg
 featured: true
 draft: false
 ---
@@ -29,7 +29,7 @@ Kendisini aramaya gelen müritleri, Şazeli'yi bitkin bir halde bulduklarında b
 
 > **Tarihçi Notu:** Hangi efsane doğru olursa olsun, her iki hikaye de kahvenin ana vatanının Etiyopya olduğunu ve ilk dönemlerde hem sosyal bir uyarıcı hem de tıbbi bir şifa kaynağı olarak kabul edildiğini gösterir.
 
-![](/img/mike-kenneally-TD4DBagg2wE-unsplash.jpg)
+![](/img/dang-cong-JqF4IS65xEg-unsplash.jpg)
 
 ## Saraylardan Sokaklara: Osmanlı’da Kahve Kültürünün Doğuşu
 
