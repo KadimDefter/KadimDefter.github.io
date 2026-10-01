@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: repo: KadimDefter/kadim-defter
+  repo: KadimDefter/kadim-defter
   branch: main
 locale: tr
 media_folder: static/img
