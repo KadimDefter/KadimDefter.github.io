@@ -57,7 +57,7 @@ form.c{display:grid;gap:12px}
 footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;font-size:.85rem;color:var(--mut);text-align:center}
 footer a{margin:0 8px}
 @media(max-width:820px){.hero,article.post{grid-template-columns:1fr}.toc{position:static}.hero h1{font-size:1.7rem}.hero .img{min-height:200px}}
-@media print{header.top,.news,.toc,.noprint,footer{display:none!important}body{background:#fff;color:#000}article.post{display:block}}
+@media print{header.top,.news,.toc,.noprint,footer,.sec{display:none!important}body{background:#fff;color:#000}article.post{display:block}}
 
 .note strong{display:block;font:700 .78rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
 .note.fun strong{color:var(--wood)}.note p{margin:0}blockquote.note{margin:1.6em 0}
