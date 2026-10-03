@@ -2,7 +2,6 @@ backend:
   name: github
   repo: KadimDefter/kadim-defter
   branch: main
-  use_graphql: false
 locale: tr
 media_folder: static/img
 public_folder: /img
