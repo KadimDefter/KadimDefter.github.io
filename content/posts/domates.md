@@ -4,7 +4,7 @@ category: gunluk
 date: 2026-10-03
 author: Yusuf Yol
 excerpt: İnsanoğlunun sudaki aksini izlemesiyle başlayan serüven, nasıl oldu da kralların servet harcadığı devasa bir lüks simgesine dönüştü? Cilalı taşlardan modern gümüş camlara aynanın kadim hikâyesi.
-image: ''
+image: /img/sekatsky-OwR9cyMNe4c-unsplash.jpg
 featured: true
 draft: false
 ---
