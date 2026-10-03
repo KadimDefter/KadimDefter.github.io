@@ -10,14 +10,14 @@ draft: false
 ---
 
 Bugün hemen her mutfakta zahmetsizce ulaştığımız tuz, insanlık tarihinin büyük bölümünde altından bile daha kıymetli görülen stratejik bir kaynaktı. Buzdolabının icadından önce gıdaları uzun süre saklayabilmenin tek yolu olan bu mineral; medeniyetlerin yükselişine, devasa ticaret yollarının kurulmasına ve hatta kanlı devrimlere yön verdi.
-​
 
 Gelin, masalarımızdaki bu mütevazı kristalin dünyayı nasıl şekillendirdiğine birlikte bakalım.
 
 ![](/img/8131.jpg)
 
-İlk Üretim ve Devrim: Antik Çin ve Mısır
-​Tuzun endüstriyel ölçekte üretimi M.Ö. 6000'li yıllarda Çin’deki Yuncheng Gölü etrafında başladı. Çin imparatorlukları, tuz üretimi ve satışını devlet tekelinde tutarak toplanan vergilerle Çin Seddi gibi devasa yapıların finansmanını sağladılar.
+**İLK ÜRETİM VE DEVRİM: ANTİK ÇİN VE MISIR**
+
+Tuzun endüstriyel ölçekte üretimi M.Ö. 6000'li yıllarda Çin’deki Yuncheng Gölü etrafında başladı. Çin imparatorlukları, tuz üretimi ve satışını devlet tekelinde tutarak toplanan vergilerle Çin Seddi gibi devasa yapıların finansmanını sağladılar.
 
 Eski Mısır'da ise tuz, sadece bir lezzet arttırıcı değil, dini ve tıbbi bir zorunluluktu. Mısırlılar mumyalama işlemlerinde bedeni kurutmak için natron adı verilen tuz karışımını kullandılar. Ayrıca balık ve etleri tuzlayarak tarihin ilk uzun ömürlü askeri azıklarını ürettiler.
 
@@ -25,7 +25,7 @@ Eski Mısır'da ise tuz, sadece bir lezzet arttırıcı değil, dini ve tıbbi b
 
 ![](/img/8129.jpg)
 
-Roma İmparatorluğu ve "Salarium": Asker Maaşından Kelimelere
+**ROMA İMPARATORLUĞU VE ''SALARIUM'': ASKER MAAŞINDAN KELİMELERE**
 
 Roma Devleti'nin gücü, büyük oranda tuz ticaretini kontrol etmesine dayanıyordu. Roma'yı İtalya kıyılarına bağlayan ünlü Via Salaria (Tuz Yolu), tüccarların ve tümenlerin ana güzergâhıydı.
 ​Romalı askerlere ödemelerinin bir kısmı doğrudan tuz olarak veya tuz satın alabilmeleri için özel bir ödenek şeklinde yapılırdı.
@@ -37,15 +37,17 @@ Roma Devleti'nin gücü, büyük oranda tuz ticaretini kontrol etmesine dayanıy
 
 ![](/img/8130.jpg)
 
-Orta Çağ'ın "Beyaz Altını" ve Fransız Devrimi
-​Orta Çağ ve Rönesans boyunca Venedik, Ceneviz ve Salzburg (anlamı: Tuz Kalesi) gibi şehirler tamamen tuz ticareti sayesinde zenginleşip birer küresel güç merkezine dönüştüler.
+**ORTA ÇAĞ'IN ''BEYAZ ALTINI'' VE FRANSIZ DEVRİMİ**
+
+Orta Çağ ve Rönesans boyunca Venedik, Ceneviz ve Salzburg (anlamı: Tuz Kalesi) gibi şehirler tamamen tuz ticareti sayesinde zenginleşip birer küresel güç merkezine dönüştüler.
 
 Ancak tuz üzerindeki ağır vergiler, halkın sabrını taşıran en büyük unsur haline geldi. Fransa'da uygulanan ve "Gabelle" adı verilen nefret edilen tuz vergisi, zengin ile fakir arasındaki uçurumu derinleştirerek 1789 Fransız İhtilali'ni ateşleyen en önemli ekonomik gerekçelerden biri oldu.
 
 ![](/img/8126.jpg)
 
-Modern Dünya: Sanayiden Masamıza
-​yüzyılda sondaj ve madencilik teknolojilerinin gelişmesiyle tuz, erişilmesi imkansız bir "lüks" olmaktan çıkıp herkesin ulaşabileceği kitlesel bir ürüne dönüştü. 
+**MODERN DÜNYA: SANAYİDEN MASAMIZA**
+
+1. ​yüzyılda sondaj ve madencilik teknolojilerinin gelişmesiyle tuz, erişilmesi imkansız bir "lüks" olmaktan çıkıp herkesin ulaşabileceği kitlesel bir ürüne dönüştü. 
 
 Bugün üretilen tuzun sadece küçük bir kısmı mutfaklarda kullanılırken, büyük çoğunluğu kimya, tekstil ve yol bakımı gibi endüstriyel alanlarda dünyamızı döndürmeye devam ediyor.
 
