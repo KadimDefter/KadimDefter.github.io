@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Yönetim Paneli</title>
+<style>
+:root{--bg:#f7f1e3;--card:#fffaf0;--ink:#2b2a28;--mut:#6b665d;--acc:#7a1f2b;--line:#e2d7bf;--sans:Inter,Roboto,system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1a17;--card:#25221e;--ink:#e9e2d3;--mut:#a89f8d;--acc:#e0959e;--line:#3a352d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans);padding-bottom:70px}
+.w{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.3rem;margin:0 0 .3em}
+a{color:var(--acc);text-decoration:none}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.bar b{font-size:1.1rem;margin-right:auto}
+.tabs{display:flex;gap:14px;flex-wrap:wrap;font-size:.92rem;margin-bottom:14px}
+label{display:block;font:600 .8rem var(--sans);color:var(--mut);margin:14px 0 4px}
+input,textarea,select{width:100%;font:inherit;font-size:.95rem;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+textarea{min-height:300px;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;line-height:1.5}
+button,.btn{font:600 .88rem var(--sans);background:var(--acc);color:#fff;border:0;border-radius:6px;padding:9px 16px;cursor:pointer;text-decoration:none;display:inline-block}
+.ghost{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:8px 0}
+.row .a{display:flex;gap:6px;flex-wrap:wrap}
+.row button,.row .btn{padding:6px 12px;font-size:.8rem}
+.chk{display:flex;align-items:center;gap:8px;font:600 .85rem var(--sans);color:var(--mut);margin-top:14px}
+.chk input{width:auto}
+.tag{font-size:.68rem;background:var(--mut);color:var(--bg);border-radius:4px;padding:1px 6px;margin-left:6px}
+.msg{position:fixed;left:0;right:0;bottom:0;padding:10px 16px;background:var(--acc);color:#fff;text-align:center;font-size:.88rem}
+.msg.err{background:#a33}
+.hint{font-size:.8rem;color:var(--mut);margin-top:4px}
+.login{max-width:380px;margin:80px auto;text-align:center}
+.thumb{width:48px;height:48px;object-fit:cover;border-radius:4px;background:var(--line)}
+</style>
+</head>
+<body>
+<div class="w" id="app"></div>
+<script>
+const OWNER='KadimDefter', REPO='KadimDefter.github.io', BRANCH='main';
+const API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/';
+const TKEY='kd_panel_token';
+let TOKEN=localStorage.getItem(TKEY)||'';
+const app=document.getElementById('app');
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const ea=s=>esc(s).replace(/"/g,'&quot;');
+function msg(t,err){const o=document.createElement('div');o.className='msg'+(err?' err':'');o.textContent=t;document.body.appendChild(o);setTimeout(()=>o.remove(),err?5000:2500)}
+function b64e(str){return btoa(unescape(encodeURIComponent(str)))}
+function b64d(str){return decodeURIComponent(escape(atob(str.replace(/\n/g,''))))}
+async function gh(path,opts={}){
+  const r=await fetch(API+path,{...opts,headers:{Authorization:'token '+TOKEN,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(opts.headers||{})}});
+  if(r.status===401){localStorage.removeItem(TKEY);TOKEN='';render();throw new Error('Jeton geçersiz')}
+  if(!r.ok && r.status!==404){const t=await r.text().catch(()=>'');throw new Error('GitHub hata: '+r.status+' '+t.slice(0,200))}
+  return r
+}
+async function ghGetFile(path){
+  const r=await gh(path);
+  if(r.status===404) return null;
+  const d=await r.json();
+  return {content:b64d(d.content), sha:d.sha}
+}
+async function ghList(path){ const r=await gh(path); if(r.status===404) return []; return r.json() }
+async function ghPut(path,content,sha,message){
+  const body={message, content:b64e(content), branch:BRANCH};
+  if(sha) body.sha=sha;
+  const r=await gh(path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  return r.json()
+}
+async function ghDelete(path,sha,message){
+  await gh(path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message,sha,branch:BRANCH})})
+}
+
+function parseFM(text){
+  const m=text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if(!m) return {data:{}, body:text};
+  const data={};
+  m[1].split('\n').forEach(l=>{
+    const i=l.indexOf(':'); if(i<0) return;
+    const k=l.slice(0,i).trim(); let v=l.slice(i+1).trim();
+    if(/^".*"$/.test(v)){try{v=JSON.parse(v)}catch(e){v=v.slice(1,-1)}}
+    else if(v==='true') v=true; else if(v==='false') v=false;
+    else if(/^-?\d+(\.\d+)?$/.test(v)) v=parseFloat(v);
+    data[k]=v
+  });
+  return {data, body:m[2].replace(/^\n+/,'')}
+}
+function buildFM(data,body){
+  const lines=Object.entries(data).filter(([,v])=>v!==undefined).map(([k,v])=>{
+    if(typeof v==='string') return k+': '+JSON.stringify(v);
+    return k+': '+v
+  });
+  return '---\n'+lines.join('\n')+'\n---\n\n'+(body||'').trim()+'\n'
+}
+function slugify(t){
+  return (t||'').toLowerCase()
+    .replace(/ç/g,'c').replace(/ğ/g,'g').replace(/ı/g,'i').replace(/ö/g,'o').replace(/ş/g,'s').replace(/ü/g,'u')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,50) || 'yazi'
+}
+
+function route(){ return (location.hash.slice(1)||'/').split('/').filter(Boolean) }
+window.addEventListener('hashchange',render);
+
+async function render(){
+  if(!TOKEN){ renderLogin(); return }
+  const r=route();
+  app.innerHTML='<p class="hint">Yükleniyor…</p>';
+  try{
+    if(r[0]==='post') await renderPostEdit(r[1]);
+    else if(r[0]==='kategoriler') await renderCategories();
+    else if(r[0]==='sayfalar') await renderPages();
+    else await renderList();
+  }catch(e){
+    app.innerHTML=`<div class="row"><b>Hata</b></div><p>${esc(e.message)}</p><p><a href="#/">Geri dön</a></p>`
+  }
+}
+
+function shell(active,inner){
+  return `<div class="bar"><b>Yönetim Paneli</b><a href="https://kadimdefter.github.io/" target="_blank">Siteyi gör ↗</a><button class="ghost" onclick="logout()">Çıkış</button></div>
+  <div class="tabs">
+    <a href="#/" style="${active=='posts'?'font-weight:700':''}">Yazılar</a>
+    <a href="#/kategoriler" style="${active=='cats'?'font-weight:700':''}">Kategoriler</a>
+    <a href="#/sayfalar" style="${active=='pages'?'font-weight:700':''}">Sayfalar</a>
+  </div>${inner}`
+}
+function logout(){ localStorage.removeItem(TKEY); TOKEN=''; location.hash=''; render() }
+
+function renderLogin(){
+  app.innerHTML=`<div class="login">
+    <h1>Yönetim Paneli</h1>
+    <p class="hint">GitHub kişisel erişim jetonunuzu (Contents: Read and write izinli) yapıştırın.</p>
+    <input id="tk" type="password" placeholder="ghp_... veya github_pat_...">
+    <p><button onclick="doLogin()">Giriş Yap</button></p>
+  </div>`
+}
+async function doLogin(){
+  const v=document.getElementById('tk').value.trim();
+  if(!v) return;
+  TOKEN=v;
+  try{
+    const r=await fetch('https://api.github.com/user',{headers:{Authorization:'token '+v}});
+    if(!r.ok) throw 0;
+    localStorage.setItem(TKEY,v);
+    location.hash='';
+    render()
+  }catch(e){ TOKEN=''; msg('Jeton doğrulanamadı.',true) }
+}
+
+async function renderList(){
+  const files=await ghList('content/posts');
+  const mds=files.filter(f=>f.name.endsWith('.md')).sort((a,b)=>a.name<b.name?1:-1);
+  const rows=mds.map(f=>{
+    const slug=f.name.replace(/\.md$/,'');
+    return `<div class="row"><div><b>${esc(slug.replace(/-/g,' '))}</b></div>
+      <div class="a"><a class="btn ghost" href="#/post/${slug}">Düzenle</a>
+      <button class="ghost" onclick="delPost('${slug}','${f.sha}')">Sil</button></div></div>`
+  }).join('') || '<p>Henüz yazı yok.</p>';
+  app.innerHTML=shell('posts', `<p><a class="btn" href="#/post/__new__">+ Yeni yazı</a></p>${rows}`)
+}
+async function delPost(slug,sha){
+  if(!confirm('Bu yazıyı silmek istediğinize emin misiniz?')) return;
+  try{
+    await ghDelete('content/posts/'+slug+'.md',sha,'Yazı silindi: '+slug);
+    msg('Silindi. Site ~1-2 dakikada güncellenecek.');
+    renderList()
+  }catch(e){ msg(e.message,true) }
+}
+
+async function loadCategories(){
+  const files=(await ghList('content/categories')).filter(f=>f.name.endsWith('.md'));
+  const out=[];
+  for(const f of files){
+    const r=await ghGetFile('content/categories/'+f.name);
+    const {data}=parseFM(r.content);
+    out.push({id:f.name.replace(/\.md$/,''), title:data.title||f.name, order:data.order||99})
+  }
+  return out.sort((a,b)=>a.order-b.order)
+}
+
+async function renderPostEdit(slug){
+  const isNew=slug==='__new__';
+  let data={title:'',category:'',date:new Date().toISOString().slice(0,10),author:'',excerpt:'',image:'',featured:false,draft:false};
+  let body='', sha=null;
+  if(!isNew){
+    const f=await ghGetFile('content/posts/'+slug+'.md');
+    if(!f){ app.innerHTML='<p>Yazı bulunamadı. <a href="#/">Geri dön</a></p>'; return }
+    const p=parseFM(f.content); data={...data,...p.data}; body=p.body; sha=f.sha;
+  }
+  const cats=await loadCategories();
+  app.innerHTML=shell('posts',`<h1>${isNew?'Yeni Yazı':'Yazıyı Düzenle'}</h1>
+    <form id="pf" onsubmit="return savePost(event,'${isNew?'':slug}','${sha||''}')">
+    <label>Başlık</label><input name="title" value="${ea(data.title)}" required>
+    <label>Kategori</label><select name="category">${cats.map(c=>`<option value="${c.id}"${c.id===data.category?' selected':''}>${esc(c.title)}</option>`).join('')}</select>
+    <label>Tarih</label><input type="date" name="date" value="${ea(String(data.date).slice(0,10))}">
+    <label>Yazar</label><input name="author" value="${ea(data.author)}" placeholder="Editör Kadrosu">
+    <label>Özet</label><textarea name="excerpt" style="min-height:70px">${esc(data.excerpt)}</textarea>
+    <label>Kapak görseli</label>
+    <input type="file" id="imgf" accept="image/*">
+    <input type="hidden" name="image" id="imgpath" value="${ea(data.image)}">
+    <p class="hint" id="imgstat">${data.image?('Mevcut: '+esc(data.image)):'Görsel seçilmedi.'}</p>
+    <label>Metin (Markdown)</label>
+    <textarea name="body">${esc(body)}</textarea>
+    <p class="hint">Her paragraf normal şekilde yazılır. Alt başlık: <code>## Başlık</code>. Not kutusu: <code>&gt; **Tarihçi Notu:** metin</code> veya <code>&gt; **İlginç Bilgi:** metin</code>. Görsel: <code>![açıklama](/img/dosya.jpg "alt yazı")</code>. Kaynakça için son başlık <code>## Kaynakça</code>, altına <code>- kaynak</code> satırları.</p>
+    <label class="chk"><input type="checkbox" name="featured" ${data.featured?'checked':''}> Manşette göster</label>
+    <label class="chk"><input type="checkbox" name="draft" ${data.draft?'checked':''}> Taslak (sitede gösterme)</label>
+    <p style="margin-top:18px"><button type="submit">Kaydet</button> <a href="#/" class="ghost btn">İptal</a></p>
+    </form>`);
+  document.getElementById('imgf').addEventListener('change',async e=>{
+    const file=e.target.files[0]; if(!file) return;
+    document.getElementById('imgstat').textContent='Yükleniyor…';
+    try{
+      const b64=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=rej;r.readAsDataURL(file)});
+      const clean=file.name.toLowerCase().replace(/[^a-z0-9.\-]+/g,'-');
+      const path='img/'+Date.now()+'-'+clean;
+      await gh('static/'+path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Görsel eklendi: '+clean,content:b64,branch:BRANCH})});
+      document.getElementById('imgpath').value='/'+path;
+      document.getElementById('imgstat').textContent='Yüklendi: /'+path
+    }catch(err){ document.getElementById('imgstat').textContent='Yükleme başarısız: '+err.message }
+  })
+}
+async function savePost(ev,existingSlug,sha){
+  ev.preventDefault();
+  const f=new FormData(ev.target), g=k=>(f.get(k)||'').toString().trim();
+  const data={
+    title:g('title'), category:g('category'), date:g('date')||new Date().toISOString().slice(0,10),
+    author:g('author'), excerpt:g('excerpt'), image:g('image')||undefined,
+    featured: f.get('featured')?true:false, draft: f.get('draft')?true:false
+  };
+  const body=g('body');
+  const slug=existingSlug || slugify(data.title);
+  const text=buildFM(data,body);
+  const btn=ev.target.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Kaydediliyor…';
+  try{
+    await ghPut('content/posts/'+slug+'.md', text, sha||null, (existingSlug?'Yazı güncellendi: ':'Yeni yazı: ')+slug);
+    msg('Kaydedildi. Site ~1-2 dakikada güncellenecek.');
+    location.hash='#/'
+  }catch(e){ msg(e.message,true); btn.disabled=false; btn.textContent='Kaydet' }
+  return false
+}
+
+async function renderCategories(){
+  const files=(await ghList('content/categories')).filter(f=>f.name.endsWith('.md'));
+  const rows=[];
+  for(const f of files){
+    const r=await ghGetFile('content/categories/'+f.name);
+    const {data}=parseFM(r.content);
+    const id=f.name.replace(/\.md$/,'');
+    rows.push({id,sha:f.sha,...data})
+  }
+  rows.sort((a,b)=>(a.order||99)-(b.order||99));
+  app.innerHTML=shell('cats', `<h1>Kategoriler</h1>` + rows.map(c=>`
+    <div class="row" style="display:block">
+      <label>Ad</label><input value="${ea(c.title)}" onchange="updCat('${c.id}','${c.sha}',this.value,null)">
+      <label>Açıklama</label><input value="${ea(c.description||'')}" onchange="updCat('${c.id}','${c.sha}',null,this.value)">
+    </div>`).join('') + `
+    <h1 style="margin-top:28px">Yeni Kategori</h1>
+    <form onsubmit="return addCat(event)">
+      <label>Ad</label><input name="title" required>
+      <label>Açıklama</label><input name="description">
+      <p><button type="submit">Ekle</button></p>
+    </form>`)
+}
+async function updCat(id,sha,title,desc){
+  try{
+    const f=await ghGetFile('content/categories/'+id+'.md');
+    const p=parseFM(f.content);
+    if(title!==null) p.data.title=title;
+    if(desc!==null) p.data.description=desc;
+    const text=buildFM(p.data,'');
+    const r=await ghPut('content/categories/'+id+'.md', text, f.sha, 'Kategori güncellendi: '+id);
+    msg('Kaydedildi.')
+  }catch(e){ msg(e.message,true) }
+}
+async function addCat(ev){
+  ev.preventDefault();
+  const f=new FormData(ev.target), title=f.get('title').toString().trim(), desc=(f.get('description')||'').toString().trim();
+  const id=slugify(title);
+  const text=buildFM({title,description:desc,hue:Math.floor(Math.random()*360),order:50},'');
+  try{
+    await ghPut('content/categories/'+id+'.md', text, null, 'Yeni kategori: '+id);
+    msg('Eklendi.'); renderCategories()
+  }catch(e){ msg(e.message,true) }
+  return false
+}
+
+async function renderPages(){
+  const about=await ghGetFile('content/pages/hakkinda.md');
+  const priv=await ghGetFile('content/pages/gizlilik.md');
+  const sf=await ghGetFile('content/settings.json');
+  const settings=sf?JSON.parse(sf.content):{};
+  const pa=about?parseFM(about.content):{data:{title:'Hakkımızda'},body:''};
+  const pp=priv?parseFM(priv.content):{data:{title:'Gizlilik Politikası'},body:''};
+  app.innerHTML=shell('pages', `<h1>Site Ayarları</h1>
+    <form onsubmit="return saveSettings(event,'${sf?sf.sha:''}')">
+    <label>Site adı</label><input name="title" value="${ea(settings.title||'')}">
+    <label>Site açıklaması</label><textarea name="description" style="min-height:60px">${esc(settings.description||'')}</textarea>
+    <label>Site adresi</label><input name="siteUrl" value="${ea(settings.siteUrl||'')}">
+    <label>İletişim e-postası</label><input name="email" value="${ea(settings.email||'')}">
+    <label>Varsayılan yazar</label><input name="author" value="${ea(settings.author||'')}">
+    <p><button type="submit">Ayarları Kaydet</button></p>
+    </form>
+    <h1 style="margin-top:28px">Hakkımızda</h1>
+    <form onsubmit="return savePage(event,'hakkinda','${about?about.sha:''}')">
+    <textarea name="body" style="min-height:220px">${esc(pa.body)}</textarea>
+    <p><button type="submit">Kaydet</button></p>
+    </form>
+    <h1 style="margin-top:28px">Gizlilik Politikası</h1>
+    <form onsubmit="return savePage(event,'gizlilik','${priv?priv.sha:''}')">
+    <textarea name="body" style="min-height:220px">${esc(pp.body)}</textarea>
+    <p><button type="submit">Kaydet</button></p>
+    </form>`)
+}
+async function saveSettings(ev,sha){
+  ev.preventDefault();
+  const f=new FormData(ev.target), g=k=>(f.get(k)||'').toString().trim();
+  const data={title:g('title'),description:g('description'),siteUrl:g('siteUrl'),email:g('email'),author:g('author')};
+  try{
+    await ghPut('content/settings.json', JSON.stringify(data,null,2), sha||null, 'Site ayarları güncellendi');
+    msg('Kaydedildi.')
+  }catch(e){ msg(e.message,true) }
+  return false
+}
+async function savePage(ev,id,sha){
+  ev.preventDefault();
+  const body=new FormData(ev.target).get('body').toString();
+  const title=id==='hakkinda'?'Hakkımızda':'Gizlilik Politikası & Çerez Bilgilendirmesi';
+  const text=buildFM({title},body);
+  try{
+    await ghPut('content/pages/'+id+'.md', text, sha||null, 'Sayfa güncellendi: '+id);
+    msg('Kaydedildi.')
+  }catch(e){ msg(e.message,true) }
+  return false
+}
+
+render();
+</script>
+</body>
+</html>
