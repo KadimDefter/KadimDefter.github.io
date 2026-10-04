@@ -21,13 +21,13 @@ Radyokarbon tarihlendirme yöntemine göre el yazmasında kullanılan parşömen
 
 Kitap genel olarak şu çizim kategorilerine ayrılmıştır:
 
-Botanik: Dünyada var olmayan, farklı bitkilerin kök ve yapraklarının birleşimi gibi duran fantastik flora çizimleri.
+- Botanik: Dünyada var olmayan, farklı bitkilerin kök ve yapraklarının birleşimi gibi duran fantastik flora çizimleri.
 
-Astronomi ve Astroloji: Dairesel haritalar, burç sembolleri ve gök cisimleri.
+- Astronomi ve Astroloji: Dairesel haritalar, burç sembolleri ve gök cisimleri.
 
-Balneoloji: Karmaşık boru sistemleriyle birbirine bağlanan havuzlarda yıkanan kadın figürleri.
+- Balneoloji: Karmaşık boru sistemleriyle birbirine bağlanan havuzlarda yıkanan kadın figürleri.
 
-Eczacılık: Tıbbi kavanozlar, kökler ve sıvı reçeteler.
+- Eczacılık: Tıbbi kavanozlar, kökler ve sıvı reçeteler.
 
 ![Görsel açıklaması](/img/1791139792776-anna-mould-zck1ap7muew-unsplash.jpg "Alt yazı")
 
