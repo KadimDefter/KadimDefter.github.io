@@ -53,7 +53,7 @@ async function gh(path,opts={}){
   if(!r.ok && r.status!==404){const t=await r.text().catch(()=>'');throw new Error('GitHub hata: '+r.status+' '+t.slice(0,200))}
   return r
 }
-async function ghGetFile(path){
+async function ghGetFile(path){ // {content, sha} or null
   const r=await gh(path);
   if(r.status===404) return null;
   const d=await r.json();
@@ -70,6 +70,7 @@ async function ghDelete(path,sha,message){
   await gh(path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message,sha,branch:BRANCH})})
 }
 
+// ---- frontmatter helpers ----
 function parseFM(text){
   const m=text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if(!m) return {data:{}, body:text};
@@ -97,6 +98,7 @@ function slugify(t){
     .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,50) || 'yazi'
 }
 
+// ---- routing ----
 function route(){ return (location.hash.slice(1)||'/').split('/').filter(Boolean) }
 window.addEventListener('hashchange',render);
 
@@ -145,6 +147,7 @@ async function doLogin(){
   }catch(e){ TOKEN=''; msg('Jeton doğrulanamadı.',true) }
 }
 
+// ---- post list ----
 async function renderList(){
   const files=await ghList('content/posts');
   const mds=files.filter(f=>f.name.endsWith('.md')).sort((a,b)=>a.name<b.name?1:-1);
@@ -165,6 +168,7 @@ async function delPost(slug,sha){
   }catch(e){ msg(e.message,true) }
 }
 
+// ---- categories for select ----
 async function loadCategories(){
   const files=(await ghList('content/categories')).filter(f=>f.name.endsWith('.md'));
   const out=[];
@@ -176,6 +180,7 @@ async function loadCategories(){
   return out.sort((a,b)=>a.order-b.order)
 }
 
+// ---- post edit/new ----
 async function renderPostEdit(slug){
   const isNew=slug==='__new__';
   let data={title:'',category:'',date:new Date().toISOString().slice(0,10),author:'',excerpt:'',image:'',featured:false,draft:false};
@@ -237,6 +242,7 @@ async function savePost(ev,existingSlug,sha){
   return false
 }
 
+// ---- categories ----
 async function renderCategories(){
   const files=(await ghList('content/categories')).filter(f=>f.name.endsWith('.md'));
   const rows=[];
@@ -282,6 +288,7 @@ async function addCat(ev){
   return false
 }
 
+// ---- pages (about/privacy) + settings ----
 async function renderPages(){
   const about=await ghGetFile('content/pages/hakkinda.md');
   const priv=await ghGetFile('content/pages/gizlilik.md');
