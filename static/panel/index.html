@@ -211,7 +211,7 @@ async function renderPostEdit(slug){
     <label class="chk"><input type="checkbox" name="draft" ${data.draft?'checked':''}> Taslak (sitede gösterme)</label>
     <p style="margin-top:18px"><button type="submit">Kaydet</button> <a href="#/" class="ghost btn">İptal</a></p>
     </form>`);
-  document.getElementById('imgf').addEventListener('change',async e=>{
+    document.getElementById('imgf').addEventListener('change',async e=>{
     const file=e.target.files[0]; if(!file) return;
     document.getElementById('imgstat').textContent='Yükleniyor…';
     try{
@@ -223,8 +223,7 @@ async function renderPostEdit(slug){
       document.getElementById('imgstat').textContent='Yüklendi: /'+path
     }catch(err){ document.getElementById('imgstat').textContent='Yükleme başarısız: '+err.message }
   })
-}
-    document.getElementById('bodyimgf').addEventListener('change',async e=>{
+  document.getElementById('bodyimgf').addEventListener('change',async e=>{
     const file=e.target.files[0]; if(!file) return;
     const stat=document.getElementById('bodyimgstat'); stat.textContent='Yükleniyor…';
     try{
@@ -241,6 +240,7 @@ async function renderPostEdit(slug){
     }catch(err){ stat.textContent='Yükleme başarısız: '+err.message }
     e.target.value=''
   })
+}
 async function savePost(ev,existingSlug,sha){
   ev.preventDefault();
   const f=new FormData(ev.target), g=k=>(f.get(k)||'').toString().trim();
