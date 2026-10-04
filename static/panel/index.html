@@ -203,7 +203,9 @@ async function renderPostEdit(slug){
     <input type="hidden" name="image" id="imgpath" value="${ea(data.image)}">
     <p class="hint" id="imgstat">${data.image?('Mevcut: '+esc(data.image)):'Görsel seçilmedi.'}</p>
     <label>Metin (Markdown)</label>
-    <textarea name="body">${esc(body)}</textarea>
+    <textarea name="body" id="bodytext">${esc(body)}</textarea>
+    <p><input type="file" id="bodyimgf" accept="image/*" style="display:none"><button type="button" class="ghost" onclick="document.getElementById('bodyimgf').click()">+ Metne Görsel Ekle</button> <span class="hint" id="bodyimgstat"></span></p>
+    <p class="hint">Her paragraf normal şekilde yazılır.
     <p class="hint">Her paragraf normal şekilde yazılır. Alt başlık: <code>## Başlık</code>. Not kutusu: <code>&gt; **Tarihçi Notu:** metin</code> veya <code>&gt; **İlginç Bilgi:** metin</code>. Görsel: <code>![açıklama](/img/dosya.jpg "alt yazı")</code>. Kaynakça için son başlık <code>## Kaynakça</code>, altına <code>- kaynak</code> satırları.</p>
     <label class="chk"><input type="checkbox" name="featured" ${data.featured?'checked':''}> Manşette göster</label>
     <label class="chk"><input type="checkbox" name="draft" ${data.draft?'checked':''}> Taslak (sitede gösterme)</label>
@@ -222,6 +224,23 @@ async function renderPostEdit(slug){
     }catch(err){ document.getElementById('imgstat').textContent='Yükleme başarısız: '+err.message }
   })
 }
+    document.getElementById('bodyimgf').addEventListener('change',async e=>{
+    const file=e.target.files[0]; if(!file) return;
+    const stat=document.getElementById('bodyimgstat'); stat.textContent='Yükleniyor…';
+    try{
+      const b64=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=rej;r.readAsDataURL(file)});
+      const clean=file.name.toLowerCase().replace(/[^a-z0-9.\-]+/g,'-');
+      const path='img/'+Date.now()+'-'+clean;
+      await gh('static/'+path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Görsel eklendi: '+clean,content:b64,branch:BRANCH})});
+      const ta=document.getElementById('bodytext');
+      const snippet='\n\n![Görsel açıklaması](/'+path+' "Alt yazı")\n\n';
+      const pos=ta.selectionStart ?? ta.value.length;
+      ta.value = ta.value.slice(0,pos) + snippet + ta.value.slice(pos);
+      ta.focus(); ta.selectionStart=ta.selectionEnd=pos+snippet.length;
+      stat.textContent='Eklendi: /'+path
+    }catch(err){ stat.textContent='Yükleme başarısız: '+err.message }
+    e.target.value=''
+  })
 async function savePost(ev,existingSlug,sha){
   ev.preventDefault();
   const f=new FormData(ev.target), g=k=>(f.get(k)||'').toString().trim();
