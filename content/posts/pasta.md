@@ -5,7 +5,7 @@ date: "2026-10-04"
 author: "Yusuf Yol"
 excerpt: "Okyanusun derinliklerine gömülen kayıp bir kıta mı, yoksa kibrin sonunu anlatan felsefi bir uyarı mı? Platon'un metinlerinden Santorini patlamasına, Atlantis efsanesinin gizemli tarihi."
 image: "/img/1791136872180-mikhail-preobrazhenskiy-ewz1uasahha-unsplash.jpg"
-featured: true
+featured: false
 draft: false
 ---
 
@@ -45,11 +45,6 @@ Minoan medeniyetinin bir anda tarih sahnesinden silinmesi, Ege dünyasında deri
 
 ## Bir Efsanenin Mirası
 
-## Bir Efsanenin Mirası
-
 Atlantis, günümüzde sadece kayıp bir kıta arayışı değil; insanoğlunun doğaya ve kendi kibrine karşı kırılganlığını hatırlatan kadim bir semboldür. Platon'un bitiremediği bu hikâye, bugün hâlâ insanlığın hayal gücünü beslemeye devam ediyor.
 
-## Kaynakça
-
-- Platon, *Timaeus* ve *Critias* diyalogları
-- Receptor Collection, "Unfinished Atlantis"
+> **Referans & Kaynak:** Bu makale hazırlanırken Receptor Collection - "Unfinished Atlantis" ve Platon'un diyalog incelemelerinden yararlanılmıştır.
