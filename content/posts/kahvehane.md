@@ -5,7 +5,7 @@ date: "2026-10-06"
 author: "Yusuf Yol"
 excerpt: "Lale Devri gerçekten sadece köşk safalarından ve zevk-i sefadan mı ibaretti? İlk matbaadan Doğu klasiklerinin tercümesine, 18. yüzyıl İstanbul’unun zihniyet dönüşümü ve kültürel rönesansı."
 image: "/img/1791236494533-louis-hansel-s9mv8bg5ops-unsplash.jpg"
-featured: true
+featured: false
 draft: false
 ---
 
