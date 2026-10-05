@@ -5,7 +5,7 @@ date: "2026-10-06"
 author: "Yusuf Yol"
 excerpt: "Orta Çağ’ın skolastik karanlığından modern dünyanın doğuşuna... Floransa tüccarlarından Kopernik’in gökbilim devrimine, insanı ve aklı merkeze alan Rönesans’ın büyüleyici öyküsü."
 image: "/img/1791237245168-brooklyn-mo5qo9xpzha-unsplash.jpg"
-featured: true
+featured: false
 draft: false
 ---
 
