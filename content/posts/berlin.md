@@ -5,7 +5,7 @@ date: "2026-10-07"
 author: "Yusuf Yol"
 excerpt: "Çin'in Han Hanedanlığı'ndan Doğu Roma'ya, Venedikli tüccarlardan İstanbul'un fethine... Doğu ile Batı'yı birbirine bağlayan, savaşlar çıkarıp yeni kıtalar keşfettiren İpek Yolu'nun büyüleyici tarihi."
 image: "/img/1791320348716-anand-ramavath-em6e6fjb3oq-unsplash.jpg"
-featured: true
+featured: false
 draft: false
 ---
 
