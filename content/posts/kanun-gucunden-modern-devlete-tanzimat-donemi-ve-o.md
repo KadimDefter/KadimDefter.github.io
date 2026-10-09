@@ -51,7 +51,7 @@ Dışişleri ve sadrazamlık makamlarında Avrupa diplomasisini yönlendiren, ha
 
 ![Görsel açıklaması](/img/1791583379257-8603.jpg)
 
-## Alan Alan Tanzimat Reformları (Öğretmen ve Öğrenciler İçin Ders Notu)
+## Tanzimat Reformları (Öğretmen ve Öğrenciler İçin Ders Notu)
 ​
 Sınavlarda ve ders anlatımlarında en çok çıkan Tanzimat yenilikleri şu başlıklar altında toplanır:
 ​
