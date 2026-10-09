@@ -19,11 +19,17 @@ Sultan II. Mahmud’un Yeniçeri Ocağı’nı kaldırarak açtığı reform yol
 ​
 Tarihçiler arasında dönemin bitişiyle ilgili farklı görüşler bulunsa da Tanzimat Dönemi genel kabul olarak şu tarihler arasını kapsar:
 ​
-## Başlangıç (1839): Sultan Abdülmecid döneminde Tanzimat Fermanı'nın ilanı.
+## Başlangıç (1839)
 
-## ​Bitiş (1871 - 1876): Âli Paşa'nın ölümü (1871), Sultan II. Abdülhamid'in tahta geçerek Kanun-ı Esasi'yi (Anayasa) ilan etmesi ve I. Meşrutiyet'in başlaması (1876).
+Sultan Abdülmecid döneminde Tanzimat Fermanı'nın ilanı.
+
+## ​Bitiş (1871 - 1876)
+
+Âli Paşa'nın ölümü (1871), Sultan II. Abdülhamid'in tahta geçerek Kanun-ı Esasi'yi (Anayasa) ilan etmesi ve I. Meşrutiyet'in başlaması (1876).
 ​
-## Dönemin Padişahları: Sultan Abdülmecid, Sultan Abdülaziz ve sadece 93 gün tahtta kalan V. Murad.
+## Dönemin Padişahları
+
+Sultan Abdülmecid, Sultan Abdülaziz ve sadece 93 gün tahtta kalan V. Murad.
 
 ![Görsel açıklaması](/img/1791583309370-8605.jpg)
 
@@ -31,11 +37,17 @@ Tarihçiler arasında dönemin bitişiyle ilgili farklı görüşler bulunsa da 
 ​
 Tanzimat Dönemi’ni önceki reform hareketlerinden ayıran en temel fark, yönetimin odağının saraydan (Padişah) alınıp Bâb-ı Âli’ye (Sadrazamlık ve bürokrasi) kaymasıdır. Bu döneme yön veren üç efsanevi devlet adamı şunlardır:
 
-## ​Mustafa Reşit Paşa: Tanzimat Fermanı’nı Gülhane Parkı’nda okuyan, devlete Batılı anlamda diplomasi ve hukuk anlayışını getiren mimar.
+## ​Mustafa Reşit Paşa
+
+Tanzimat Fermanı’nı Gülhane Parkı’nda okuyan, devlete Batılı anlamda diplomasi ve hukuk anlayışını getiren mimar.
 ​
-## Mehmet Emin Âli Paşa: Kırım Savaşı sonrası ilan edilen 1856 Islahat Fermanı’nın hazırlayıcısı ve diplomatik deha.
+## Mehmet Emin Âli Paşa
+
+Kırım Savaşı sonrası ilan edilen 1856 Islahat Fermanı’nın hazırlayıcısı ve diplomatik deha.
 ​
-## Keçecizade Mehmet Fuat Paşa: Dışişleri ve sadrazamlık makamlarında Avrupa diplomasisini yönlendiren, hazırcevaplığıyla tanınan devlet adamı.
+## Keçecizade Mehmet Fuat Paşa
+
+Dışişleri ve sadrazamlık makamlarında Avrupa diplomasisini yönlendiren, hazırcevaplığıyla tanınan devlet adamı.
 
 ![Görsel açıklaması](/img/1791583379257-8603.jpg)
 
@@ -71,11 +83,11 @@ Kurumlar: Rüştiyeler (ortaokul), İdadiler (lise), Darülfünun (üniversite) 
 ​
 Tanzimat Dönemi, büyük iç ve dış krizlerle sınanmıştır:
 ​
-## Mısır Sorunu (Mehmet Ali Paşa İsyanı):
+## Mısır Sorunu (Mehmet Ali Paşa İsyanı)
 
 1840 Londra Antlaşması ile çözülmüş ve Mısır özel statülü bir eyalet haline getirilmiştir.
 ​
-## Kırım Savaşı (1853-1856):
+## Kırım Savaşı (1853-1856)
 
 Rusya’ya karşı İngiltere ve Fransa ile müttefik olunarak kazanılmış, ancak Osmanlı tarihinde ilk kez dış borç bu savaş sırasında (1854 - İngiltere'den) alınmıştır.
 ​
