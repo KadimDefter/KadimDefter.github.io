@@ -64,18 +64,18 @@ Hukuk Önünde Eşitlik: Din ve ırk farkı gözetilmeksizin herkes "Osmanlı va
 Şura-yı Devlet: Günümüz Danıştay’ının temeli atılmıştır.
 
 ​## 2. İdare ve Taşra Teşkilatı
-​
+
 1864 Vilayet Nizamnamesi: Taşra yönetimi eyalet sisteminden vilayet, sancak, kaza ve köy hiyerarşisine geçirilerek modernleştirilmiştir.
 
-​## 3. Eğitim ve Basın Hayatı
-​
+## 3. Basın ve Eğitim Hayatı
+
 Maârif-i Umûmiyye Nezâreti: Günümüz Milli Eğitim Bakanlığı kurulmuştur.
-​
+
 Kurumlar: Rüştiyeler (ortaokul), İdadiler (lise), Darülfünun (üniversite) ve Rüştiye kız okulları açılmıştır.
-​
+
 İlk Özel Türkçe Gazete (1860): Şinasi ve Agâh Efendi tarafından Tercümân-ı Ahvâl gazetesi çıkarılmış, böylece kamuoyu kavramı doğmuştur.
-​
-> *Tarihçi Notu:* Tanzimat Fermanı ile Islahat Fermanı arasındaki en temel fark şudur: Tanzimat Fermanı doğrudan Osmanlı bürokrasisinin kendi iradesiyle hazırlanmışken; 1856 Islahat Fermanı, Kırım Savaşı sonrasında İngiltere ve Fransa gibi Avrupalı devletlerin baskısıyla gayrimüslimlere daha geniş ayrıcalıklar vermek amacıyla ilan edilmiştir.
+
+> **Tarihçi Notu:** Tanzimat Fermanı ile Islahat Fermanı arasındaki en temel fark şudur: Tanzimat Fermanı doğrudan Osmanlı bürokrasisinin kendi iradesiyle hazırlanmışken; 1856 Islahat Fermanı, Kırım Savaşı sonrasında İngiltere ve Fransa gibi Avrupalı devletlerin baskısıyla gayrimüslimlere daha geniş ayrıcalıklar vermek amacıyla ilan edilmiştir.
 
 ![Görsel açıklaması](/img/1791583565436-8602.jpg)
 
@@ -93,6 +93,9 @@ Rusya’ya karşı İngiltere ve Fransa ile müttefik olunarak kazanılmış, an
 ​
 Alınan borçların ödenememesi, ilerleyen yıllarda (1881) Osmanlı maliyesinin Avrupalı alacaklılarca denetlenmesini sağlayacak Düyun-ı Umumiye idaresine zemin hazırlamıştır.
 ​
-> *İlginç Bilgi:* Tanzimat reformları, toplumda "Alaturka" ile "Alafranga" çatışmasını doğurmuştur. Dönemin aydınları (Namık Kemal, Ziya Paşa gibi "Yeni Osmanlılar") Batı'nın teknolojisini ve anayasal sistemini almayı savunurken, kontrolsüz Batılılaşmayı ve kültür yozlaşmasını edebiyat eserlerinde sertçe eleştirmişlerdir.
+> **İlginç Bilgi:** Tanzimat reformları, toplumda "Alaturka" ile "Alafranga" çatışmasını doğurmuştur. Dönemin aydınları (Namık Kemal, Ziya Paşa gibi "Yeni Osmanlılar") Batı'nın teknolojisini ve anayasal sistemini almayı savunurken, kontrolsüz Batılılaşmayı ve kültür yozlaşmasını edebiyat eserlerinde sertçe eleştirmişlerdir.
 
-> *Referans & Kaynak:* Bu makale hazırlanırken Wikitarih - "Tanzimat Dönemi" ve TDV İslâm Ansiklopedisi - "Tanzimat" derlemelerinden yararlanılmıştır.
+## Kaynakça
+
+- Wikitarih, "Tanzimat Dönemi"
+- TDV İslâm Ansiklopedisi, "Tanzimat"
