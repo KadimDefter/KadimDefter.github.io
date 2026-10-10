@@ -5,7 +5,7 @@ date: "2026-10-10"
 author: "Yusuf Yol"
 excerpt: "1839 Gülhane Hatt-ı Hümayunu’ndan Meşrutiyet’e... Padişahın yetkilerini ilk kez kanunla sınırlayan, eşit vatandaşlık, Bâb-ı Âli bürokrasisi, ilk gazete ve Batılılaşma sancılarıyla Tanzimat Dönemi’nin eksiksiz öyküsü."
 image: "/img/1791583190974-8604.jpg"
-featured: true
+featured: false
 draft: false
 ---
 
