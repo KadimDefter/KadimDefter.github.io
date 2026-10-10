@@ -63,7 +63,7 @@ Hukuk Önünde Eşitlik: Din ve ırk farkı gözetilmeksizin herkes "Osmanlı va
 ​
 Şura-yı Devlet: Günümüz Danıştay’ının temeli atılmıştır.
 
-​## 2. İdare ve Taşra Teşkilatı
+## 2. İdare ve Taşra Teşkilatı
 
 1864 Vilayet Nizamnamesi: Taşra yönetimi eyalet sisteminden vilayet, sancak, kaza ve köy hiyerarşisine geçirilerek modernleştirilmiştir.
 
