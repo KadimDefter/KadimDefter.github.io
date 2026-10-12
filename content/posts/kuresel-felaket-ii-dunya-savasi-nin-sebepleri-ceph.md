@@ -19,10 +19,10 @@ II. Dünya Savaşı (1939–1945), 50’den fazla ülkenin katıldığı, kara, 
 
 - Lebensraum (Yaşam Alanı) Politikası: Hitler'in "üstün ırk" olarak gördüğü Alman ulusuna Doğu Avrupa'da yeni alanlar açma hedefi.
 
-- Müttefikler ve Miğfer Blokları:
+## Müttefikler ve Miğfer Blokları
 
-Miğfer (Axis) Devletleri: Almanya, İtalya, Japonya.
-Müttefik (Allied) Devletler: İngiltere, Fransa, SSCB (1941'den sonra), ABD (1941'den sonra) ve Çin.
+- Miğfer (Axis) Devletleri: Almanya, İtalya, Japonya.
+- Müttefik (Allied) Devletler: İngiltere, Fransa, SSCB (1941'den sonra), ABD (1941'den sonra) ve Çin.
 
 ![Görsel açıklaması](/img/1791839699058-provincial-archives-of-alberta-4lerw02eivo-unsplash.jpg)
 
@@ -60,7 +60,7 @@ Müttefik (Allied) Devletler: İngiltere, Fransa, SSCB (1941'den sonra), ABD (19
 
 - Atom Bombası ve Japonya'nın Teslimi (Ağustos 1945): ABD'nin Hiroşima ve Nagazaki'ye attığı atom bombaları sonrası Japonya teslim oldu ve II. Dünya Savaşı resmi olarak sona erdi.
 
-![Görsel açıklaması](/img/1791840533119-emily-schultz-glzeokv-v-m-unsplash.jpg)
+![Görsel açıklaması](/img/1791841220752-shubham-dhage-khisaldeali-unsplash.jpg)
 
 ## Savaşın Bilançosu ve Küresel Mirası
 
