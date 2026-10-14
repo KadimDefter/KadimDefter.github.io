@@ -5,7 +5,7 @@ date: "2026-10-14"
 author: "Yusuf Yol"
 excerpt: "1769'da saatte 3,5 km giden buharlı araçlardan günümüzün yapay zekalı otonom arabalarına... Karl Benz, Mercedes-Benz'in doğuşu ve otomotiv tarihinin kırılma noktaları."
 image: "/img/1791967878885-arnaud-mariat-ziy-0q6cnr0-unsplash.jpg"
-featured: true
+featured: false
 draft: false
 ---
 
