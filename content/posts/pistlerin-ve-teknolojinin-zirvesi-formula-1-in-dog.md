@@ -27,7 +27,7 @@ II. Dünya Savaşı öncesinde Avrupa'da düzenlenen Grand Prix yarışları, 19
 ​
 Formula 1 tarihi, sadece pilotların değil; mühendislerin de savaşıdır:
 
-​- Ortadan Motorlu Araçlar (1950'ler): Cooper takımı motoru aracın arkasına/ortasına yerleştirerek ağırlık dengesini değiştirdi.
+- Ortadan Motorlu Araçlar (1950'ler): Cooper takımı motoru aracın arkasına/ortasına yerleştirerek ağırlık dengesini değiştirdi.
 
 - Kanatlar ve Aerodinamik (1960'lar): Araçlara eklenen ön ve arka kanatlar sayesinde yere basma kuvveti (downforce) yaratıldı.
 
