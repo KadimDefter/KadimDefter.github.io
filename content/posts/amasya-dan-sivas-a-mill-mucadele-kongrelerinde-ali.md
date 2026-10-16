@@ -11,7 +11,7 @@ draft: false
 
 30 Ekim 1918 Mondros Mütarekesi’nin ardından vatanın işgal edilmesi üzerine Türk milleti, önce bölgesel cemiyetlerle savunmaya geçmiş, ardından Mustafa Kemal Paşa liderliğinde bu hareket ulusal bir nitelik kazanmıştır. Bu örgütlenmenin hukuki ve siyasi temelleri kongreler ve genelgeler ile atılmıştır.
 
-!(/img/1792176868153-9105.jpg)
+![Görsel açıklaması](/img/1792177732184-9105.jpg)
 
 ## Amasya Genelgesi (22 Haziran 1919) – İhtilal Bildirisi
 ​
@@ -28,7 +28,7 @@ Alınan Kararlar ve Ders Notları:
 > **Söylenen Tarihi Söz:** Mustafa Kemal Paşa genelge sonrası:
 "Artık İstanbul Anadolu'ya hâkim değil, tâbi olmak zorundadır."
 
-!(/img/1792176996969-9106.jpg)
+![Görsel açıklaması](/img/1792177767022-9106.jpg)
 
 ## Erzurum Kongresi (23 Temmuz - 7 Ağustos 1919)
 ​
@@ -46,7 +46,7 @@ Alınan Kararlar ve Ders Notları:
 
 - Azınlıklar: Azınlıklara siyasi hakimiyet ve sosyal dengemizi bozacak ayrıcalıklar verilemez.
 
-!(/img/1792177122484-9107.jpg)
+![Görsel açıklaması](/img/1792177793773-9107.jpg)
 
 ## Sivas Kongresi (4 - 11 Eylül 1919) – Tam Ulusal Kongre
 ​
@@ -66,7 +66,7 @@ Alınan Kararlar ve Ders Notları:
 "Paşam, delegesi bulunduğum tıbbiyeliler beni buraya bağımsızlık davamızı başarmak yolundaki çalışmaya katılmak üzere gönderdiler. Manda fikrini kabul edemem. Eğer kabul ederseniz, seni de reddederiz!" demiş;
 Mustafa Kemal Paşa ise: "Evlat, müsterih ol! Gençlikle iftihar ediyorum. Parolamız tektir: Ya istiklal ya ölüm!" yanıtını vermiştir.
 
-!(/img/1792177278700-9108.jpg)
+![Görsel açıklaması](/img/1792177823295-9108.jpg)
 
 ## Diğer Bölgesel Kongreler (Derslerde Çıkan Kısa Notlar)
 
@@ -74,7 +74,7 @@ Mustafa Kemal Paşa ise: "Evlat, müsterih ol! Gençlikle iftihar ediyorum. Paro
 
 - Amasya Görüşmeleri (20-22 Ekim 1919): Sivas Kongresi sonrası baskılara dayanamayan Damat Ferit Hükümeti istifa etti. Yeni İstanbul Hükümeti, Temsil Heyeti ile görüşmeyi kabul etti. Böylece İstanbul Hükümeti, Temsil Heyeti'nin hukuki varlığını ilk kez resmen tanıdı.
 
-!(/img/1792177378612-9109.jpg)
+![Görsel açıklaması](/img/1792177852710-9109.jpg)
 
 ## Dersler İçin Soru-Cevap Kısa Özet
 
@@ -92,5 +92,6 @@ Hem toplanış hem de aldığı kararlar bakımından tamamen ulusal tek kongred
 
 ## Kaynakça
 
-- T.C. Atatürk Kültür, Dil ve Tarih Yüksek Kurumu - Atatürk Ansiklopedisi ("Millî Mücadele Döneminde Kongreler")
+- T.C. Atatürk Kültür, Dil ve Tarih Yüksek Kurumu
+- Atatürk Ansiklopedisi ("Millî Mücadele Döneminde Kongreler")
 - Nutuk
